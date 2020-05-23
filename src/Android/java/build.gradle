@@ -1,0 +1,72 @@
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.2'
+    }
+    tasks.withType(JavaCompile) {
+        options.encoding = "UTF-8"
+        options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+    }
+}
+
+apply plugin: 'com.android.library'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: '*.jar')
+}
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion '29.0.2'
+
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 29
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    sourceSets {
+        main  {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src','src-all-recognize']
+//            resources.srcDirs = ['src']
+//            renderscript.srcDirs = ['src']
+            res.srcDirs = ['res']
+        }
+    }
+}
+
+task jar(type: Jar) {
+    from android.sourceSets.main.java
+}
+
+android.libraryVariants.all { variant ->
+    def name = variant.buildType.name
+//    if (name.equals(com.android.builder.core.BuilderConstants.DEBUG)) {
+//        return; // Skip debug builds.
+//    }
+    def task = project.tasks.create "jar${name.capitalize()}", Jar
+    task.dependsOn variant.javaCompile
+    task.from variant.javaCompile.destinationDir
+    artifacts.add('archives', task);
+}

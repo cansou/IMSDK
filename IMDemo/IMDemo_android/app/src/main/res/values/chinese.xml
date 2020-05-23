@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login">登陆</string>
+    <string name="logout">注销</string>
+    <string name="userName">用户名</string>
+    <string name="channelName">房间号</string>
+    <string name="sendText">发送文本</string>
+    <string name="sendAudio">发送语音</string>
+</resources>
