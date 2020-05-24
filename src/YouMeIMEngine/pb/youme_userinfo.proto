@@ -1,0 +1,33 @@
+syntax = "proto2";
+option optimize_for = LITE_RUNTIME;
+package YOUMEServiceProtocol;
+
+// 获取用户信息请求包
+message GetUserInfoReq
+{
+	required int32 version = 1;		
+	required bytes user_id = 2;
+}
+
+// 获取用户信息应答包
+message GetUserInfoRsp
+{
+	required int32 version = 1;
+	required bytes user_info = 2;
+	optional double longitude = 3;
+	optional double latitude = 4;
+}
+
+// 更新用户信息请求包
+message UpdateUserInfoReq
+{
+	required int32 version = 1;	
+	required bytes user_info = 2;
+}
+
+// 更新用户信息应答包
+message UpdateUserInfoRsp
+{
+	required int32 version = 1;
+	required int32 ret = 2;				
+}

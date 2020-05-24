@@ -1,0 +1,33 @@
+syntax = "proto2";
+option optimize_for = LITE_RUNTIME;
+package YOUMEServiceProtocol;
+
+// 查询房间封禁记录包体
+message ForbidRecordReq
+{
+	required int32 version = 1;
+	optional bytes roomid = 2;
+	optional int32 user_right = 3;
+	optional uint32 room_seq = 4;
+	optional uint32 limit = 5;
+}
+
+message YoumeForbidRecord
+{
+	required uint32 room_seq = 1;
+	required bytes roomid = 2;
+	required int32 user_right = 3;
+	required uint64 expire_time = 4;
+	required bool forbid_room = 5;		// 房间是否被封禁
+	required int32 reason_type = 6;		// 封禁类型
+	required string reason = 7;			// 封禁原因
+}
+
+// 查询房间封禁记录应答包体
+message ForbidRecordRsp
+{
+	required int32 version = 1;
+	required int32 ret = 2;				// 返回码, 0成功, 其他失败
+	required int32 record_cnt = 3;
+	repeated YoumeForbidRecord record_list = 4;
+}

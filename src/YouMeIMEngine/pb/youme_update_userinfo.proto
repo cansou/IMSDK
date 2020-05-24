@@ -1,0 +1,25 @@
+syntax = "proto2";
+option optimize_for = LITE_RUNTIME;
+package YOUMEServiceProtocol;
+
+//更新关系链用户个人信息
+message UpdateRcUserInfoReq
+{
+  required int32 version = 1;
+  optional bytes nickname = 2;			//昵称
+  optional int32 gender = 3;			//性别 0-未知 1-男 2-女
+  optional bytes country = 4;			//国家
+  optional bytes province = 5;			//省份
+  optional int32 privacy = 6;			//隐私权限位
+  optional bytes city = 7;              //城市
+  optional bytes avatar = 8;            //头像
+  optional bytes signature = 9;         //个性签名
+  optional string extand_json = 10;		//扩展字段，json串
+}
+
+//更新关系链用户个人信息回复
+message UpdateRcUserInfoRsp
+{
+  required int32 version = 1;
+  required int32 ret = 2;
+}

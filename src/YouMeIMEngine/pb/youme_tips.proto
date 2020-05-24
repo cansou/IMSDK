@@ -1,0 +1,31 @@
+syntax = "proto2";
+option optimize_for = LITE_RUNTIME;
+package YOUMEServiceProtocol;
+import "youme_comm.proto";
+
+message AppTips
+{
+	required uint64 tips_id = 1;
+	required bytes channel_id = 2;
+	required bytes title = 3;
+	required int32 tips_type = 4;
+	required int32 loop_type = 5;
+	required bytes content = 6;
+	required bytes link_keywords = 7;
+	required bytes link_addr = 8;
+	required bytes loop_weekday = 9;
+	required bytes start_datetime = 10;
+	required bytes end_datetime = 11;
+	required uint32 enable = 12;
+	required uint64 old_id = 13;
+	optional YOUMECommonProtocol.MsgComment comment = 14;
+}
+
+message GetTipsRsp
+{
+	required int32 version = 1;
+	required int32 ret = 2;				// 返回码, 0成功, 其他失败
+	required int32 tips_cnt = 3;
+	repeated AppTips tips_list = 4; 
+}
+

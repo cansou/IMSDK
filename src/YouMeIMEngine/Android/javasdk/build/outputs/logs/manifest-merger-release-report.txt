@@ -1,0 +1,53 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml:2:1-5:12
+INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml:2:1-5:12
+INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml:2:1-5:12
+INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml:2:1-5:12
+INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml:2:1-5:12
+INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml:2:1-5:12
+INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml:2:1-5:12
+	package
+		ADDED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml:2:70-109
+		INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml
+		INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml
+	android:versionName
+		ADDED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml:2:158-183
+		INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml
+		INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml:2:11-69
+	android:versionCode
+		ADDED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml:2:184-207
+		INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml
+		INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml
+	android:installLocation
+		ADDED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml:2:208-238
+	android:theme
+		ADDED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml:2:110-157
+supports-screens
+ADDED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml:3:3-163
+	android:largeScreens
+		ADDED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml:3:78-105
+	android:smallScreens
+		ADDED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml:3:21-48
+	android:normalScreens
+		ADDED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml:3:49-77
+	android:xlargeScreens
+		ADDED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml:3:106-134
+	android:anyDensity
+		ADDED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml:3:135-160
+uses-sdk
+ADDED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml:4:3-71
+INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml:4:3-71
+INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml:4:3-71
+INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml:4:3-71
+INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml:4:3-71
+	android:targetSdkVersion
+		ADDED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml:4:39-68
+		INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml
+		INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml:4:13-38
+		INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml
+		INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml

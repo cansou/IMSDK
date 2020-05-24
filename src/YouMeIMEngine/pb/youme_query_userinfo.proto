@@ -1,0 +1,29 @@
+syntax = "proto2";
+option optimize_for = LITE_RUNTIME;
+package YOUMEServiceProtocol;
+
+import "youme_rcuserinfo.proto";
+
+//查询关系链用户个人信息
+message GetRcUserInfoReq
+{
+required int32 version = 1;
+required bytes user_id = 2;
+}
+
+//查询关系链用户个人信息回复
+message GetRcUserInfoRsp
+{
+required int32 version = 1;
+required int32 ret = 2;
+required RcUserInfo user_info = 3;
+}
+
+//关系链用户信息更新通知请求包体 (内部使用)
+message RcUserInfoUpdateNotifyRsp
+{
+	required int32 version = 1;
+	required bytes snder_id = 2;  //通知发起方
+	required bytes recver_id = 3;  //通知接收方
+	optional bytes notify_msg = 4;
+}

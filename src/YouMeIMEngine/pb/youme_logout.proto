@@ -1,0 +1,16 @@
+syntax = "proto2";
+option optimize_for = LITE_RUNTIME;
+package YOUMEServiceProtocol;
+
+// 登出请求包体
+message LogoutReq
+{
+	required int32 version = 1;
+}
+
+// 登出应答包体
+message LogoutRsp
+{
+	required int32 version = 1;
+	required int32 ret = 2;				// 返回码, 0成功, 其他失败
+}

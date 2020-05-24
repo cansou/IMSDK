@@ -1,0 +1,67 @@
+syntax = "proto2";
+option optimize_for = LITE_RUNTIME;
+package YOUMEServiceProtocol;
+
+// ���뷿���������
+message EnterRoomReq
+{
+	required int32 version = 1;
+	required bytes room_id = 2;
+}
+
+// ���뷿��Ӧ�����
+message EnterRoomRsp
+{
+	required int32 version = 1;
+	required int32 ret = 2;				// ������, 0�ɹ�, ����ʧ��
+}
+
+// �뿪�����������
+message LeaveRoomReq
+{
+	required int32 version = 1;
+	required bytes room_id = 2;
+}
+
+// �뿪����Ӧ�����
+message LeaveRoomRsp
+{
+	required int32 version = 1;
+	required int32 ret = 2;				// ������, 0�ɹ�, ����ʧ��
+}
+
+
+// �뿪���з����������
+message LeaveAllRoomReq
+{
+	required int32 version = 1;
+}
+
+// �뿪���з���Ӧ�����
+message LeaveAllRoomRsp
+{
+	required int32 version = 1;
+	required int32 ret = 2;				// ������, 0�ɹ�, ����ʧ��
+}
+
+
+// ��ȡ������Ϣ�������
+message GetRoomInfoReq
+{
+	required int32 version = 1;
+	required bytes room_id = 2;
+}
+
+message YoumeRoomInfo
+{
+	required uint32 member_cnt = 1;
+}
+
+
+// ��ȡ������ϢӦ�����
+message GetRoomInfoRsp
+{
+	required int32 version = 1;
+	required int32 ret = 2;
+	required YoumeRoomInfo room_info = 3;
+}

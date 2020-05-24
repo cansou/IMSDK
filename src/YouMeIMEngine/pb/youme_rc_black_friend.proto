@@ -1,0 +1,32 @@
+syntax = "proto2";
+option optimize_for = LITE_RUNTIME;
+package YOUMEServiceProtocol;
+
+//关系链拉黑好友
+message BlackRcFriendReq
+{
+	required int32 version = 1;
+	required bytes user_id = 2;
+}
+
+//关系链拉黑好友回复
+message BlackRcFriendRsp
+{
+	required int32 version = 1;
+	required int32 ret = 2;
+}
+
+
+//关系链解除黑名单
+message UnblackRcFriendReq
+{
+	required int32 version = 1;
+	required bytes user_id = 2;
+}
+
+//关系链解除黑名单回复
+message UnblackRcFriendRsp
+{
+	required int32 version = 1;
+	required int32 ret = 2;
+}

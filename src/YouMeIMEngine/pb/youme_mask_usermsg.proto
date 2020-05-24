@@ -1,0 +1,54 @@
+syntax = "proto2";
+option optimize_for = LITE_RUNTIME;
+package YOUMEServiceProtocol;
+
+// 设置屏蔽消息用户请求包体 
+message SetMaskMsgUserReq
+{
+	required int32 version = 1;
+	required bytes room_id = 2;
+	required int32 mask_right = 3;	// 屏蔽权限, 1:屏蔽 0:解除
+	repeated bytes mask_user_list = 4;
+}
+
+// 设置屏蔽消息用户应答包体
+message SetMaskMsgUserRsp
+{
+	required int32 version = 1;
+	required int32 ret = 2;
+}
+
+
+// 获取屏蔽消息用户请求包体 
+message GetMaskMsgUserReq
+{
+	required int32 version = 1;
+	required bytes room_id = 2;
+	required int32 mask_right = 3;
+	required uint64 mask_seq = 4;	// 屏蔽记录序号, 起始为0,用于分页拉取
+	optional uint32 number_limit = 5;	// 获取用户数量限制
+}
+
+// 获取屏蔽消息用户应答包体
+message GetMaskMsgUserRsp
+{
+	required int32 version = 1;
+	required int32 ret = 2;
+	required uint32 user_cnt = 3;	// 符合请求的用户总数,与mask_user_list数组长度可能不一致
+	required uint64 mask_seq = 4;
+	repeated bytes mask_user_list = 5;
+}
+
+// 清除某房间屏蔽消息权限设置请求包体
+message CleanMaskMsgUserReq
+{
+	required int32 version = 1;
+	required bytes room_id = 2;
+}
+
+// 清除某房间屏蔽消息权限设置应答包体
+message CleanMaskMsgUserRsp
+{
+	required int32 version = 1;
+	required int32 ret = 2;
+}

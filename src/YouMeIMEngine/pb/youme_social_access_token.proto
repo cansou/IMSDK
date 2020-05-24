@@ -1,0 +1,18 @@
+syntax = "proto2";
+option optimize_for = LITE_RUNTIME;
+package YOUMEServiceProtocol;
+
+// 获取微信凭证请求包
+message GetWeiXinAccessTokenReq
+{
+	required int32 version = 1;
+}
+
+// 获取微信凭证应答包
+message GetWeiXinAccessTokenRsp
+{
+	required int32 version = 1;
+	required int32 ret = 2;				// 返回码, 0成功, 其他失败
+	required string token = 3;
+	required uint64 token_seq = 4;
+}

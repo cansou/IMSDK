@@ -1,0 +1,23 @@
+syntax = "proto2";
+option optimize_for = LITE_RUNTIME;
+package YOUMEServiceProtocol;
+
+// 登录请求包体, 用接入包头加密 
+message LoginReq
+{
+	required int32 version = 1;
+	required string device_token = 2;
+	required string pswd = 3;
+	required int32 os_type = 4;
+	optional string auth_token = 5;
+	optional string user_info = 6;
+}
+
+// 登录应答包体, 用接入包头加密
+message LoginRsp
+{
+	required int32 version = 1;
+	required int32 ret = 2;				// 返回码, 0成功, 其他失败
+	required string secret = 3;			// 后续通讯的加密 key
+	optional string ret_msg = 4;
+}

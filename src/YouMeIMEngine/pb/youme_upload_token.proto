@@ -1,0 +1,24 @@
+syntax = "proto2";
+option optimize_for = LITE_RUNTIME;
+package YOUMEServiceProtocol;
+import "youme_comm.proto";
+
+// 获取上传凭证请求包
+message GetUploadTokenReq
+{
+	required int32 version = 1;	
+	required int32 file_size = 2;
+	required string file_md5 = 3;
+	required string file_suffix = 4;
+}
+
+// 获取上传凭证应答包
+message GetUploadTokenRsp
+{
+	required int32 version = 1;
+	required int32 ret = 2;				// 返回码, 0成功, 其他失败
+	required string token = 3;
+	required string download_url = 4;
+	repeated YOUMECommonProtocol.NameValue headers = 5;
+	optional uint32 bucket_type = 6;	// 0: AWS 1: OSS 2: COS
+}

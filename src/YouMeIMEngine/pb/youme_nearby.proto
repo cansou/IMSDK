@@ -1,0 +1,40 @@
+syntax = "proto2";
+option optimize_for = LITE_RUNTIME;
+package YOUMEServiceProtocol;
+import "youme_comm.proto";
+
+// 获取附近的人请求
+message GetNearbyUserReq
+{
+	required int32 version = 1;
+	required double longitude = 2;			// 请求方所在经度值
+	required double latitude = 3;			// 请求方所在纬度值
+	required string district_name = 4;		// 请求方所在行政区域描述
+	required uint32 adcode = 5;				// 请求方所在行政区域编码
+	required uint32 number_limit = 6;		// 获取人数限制
+	optional uint32 max_distance_limit = 7;		// 最大距离限制
+	optional double min_distance_limit = 8;		// 最小距离限制
+	optional YOUMECommonProtocol.DistrictLevel district_level = 9;
+	optional uint32 where_adcode = 10;		// 搜索行政区域编码
+	optional string service_area_id = 11;		// 搜索服务分区
+}
+
+message YoumeUserLocation
+{
+	required bytes user_id = 1;					// 用户ID
+	required double longitude = 2;				// 用户所在经度
+	required double latitude = 3;				// 用户所在纬度
+	required string district_name = 4;			// 用户行政区域描述
+	required uint32 adcode = 5;					// 用户行政区域编码
+	required YOUMECommonProtocol.DistrictLevel district_level = 6;	// 用户行政区域等级
+	required double distance = 7;				// 用户距离
+}
+
+// 获取附近的人响应
+message GetNearbyUserRsp
+{
+	required int32 version = 1;
+	required int32 ret = 2;				// 返回码, 0成功, 其他失败
+	required uint32 people_cnt = 3;
+	repeated YoumeUserLocation people_list = 4;
+}

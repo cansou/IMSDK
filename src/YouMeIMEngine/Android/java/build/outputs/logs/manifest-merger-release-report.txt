@@ -1,0 +1,47 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/java/AndroidManifest.xml:1:1-17:12
+INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/java/AndroidManifest.xml:1:1-17:12
+INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/java/AndroidManifest.xml:1:1-17:12
+INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/java/AndroidManifest.xml:1:1-17:12
+INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/java/AndroidManifest.xml:1:1-17:12
+INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/java/AndroidManifest.xml:1:1-17:12
+INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/java/AndroidManifest.xml:1:1-17:12
+	package
+		ADDED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/java/AndroidManifest.xml:2:5-33
+		INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/java/AndroidManifest.xml
+		INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/java/AndroidManifest.xml
+	android:versionName
+		ADDED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/java/AndroidManifest.xml:4:5-30
+		INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/java/AndroidManifest.xml
+		INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/java/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/java/AndroidManifest.xml:1:11-69
+	android:versionCode
+		ADDED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/java/AndroidManifest.xml:3:5-28
+		INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/java/AndroidManifest.xml
+		INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/java/AndroidManifest.xml
+uses-sdk
+ADDED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/java/AndroidManifest.xml:6:5-8:41
+INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/java/AndroidManifest.xml:6:5-8:41
+INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/java/AndroidManifest.xml:6:5-8:41
+INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/java/AndroidManifest.xml:6:5-8:41
+INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/java/AndroidManifest.xml:6:5-8:41
+	android:targetSdkVersion
+		ADDED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/java/AndroidManifest.xml:8:9-38
+		INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/java/AndroidManifest.xml
+		INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/java/AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/java/AndroidManifest.xml:7:9-35
+		INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/java/AndroidManifest.xml
+		INJECTED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/java/AndroidManifest.xml
+application
+ADDED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/java/AndroidManifest.xml:10:5-15:19
+	android:label
+		ADDED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/java/AndroidManifest.xml:13:9-41
+	android:icon
+		ADDED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/java/AndroidManifest.xml:12:9-45
+	android:allowBackup
+		ADDED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/java/AndroidManifest.xml:11:9-35
+	android:theme
+		ADDED from /Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/java/AndroidManifest.xml:14:9-40

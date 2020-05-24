@@ -1,0 +1,18 @@
+syntax = "proto2";
+option optimize_for = LITE_RUNTIME;
+package YOUMEServiceProtocol;
+
+//关系链删除好友
+message DelRcFriendReq
+{
+	required int32 version = 1;
+	required bytes user_id = 2;
+	required int32 is_double_side = 3;		//0-双向删除， 1-单向删除
+}
+
+//关系链删除好友回复
+message DelRcFriendRsp
+{
+	required int32 version = 1;
+	required int32 ret = 2;
+}

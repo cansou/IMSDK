@@ -1,0 +1,57 @@
+syntax = "proto2";
+option optimize_for = LITE_RUNTIME;
+package YOUMEServiceProtocol;
+import "youme_rc_comm.proto";
+
+enum RC_ADD_RESULT
+{
+	RC_ADD_REFUSED = 1;		//对方默认不允许被添加，无需验证
+	RC_ADD_NEED_VERIFY = 2;		//对方默认需验证决定是否被添加
+	RC_ADD_AGREED = 3;	//对方默认允许被添加，无需验证
+}
+
+//添加好友
+message AddRcFriendReq
+{
+	required int32 version = 1;
+	required bytes user_id = 2;
+	optional bytes verify_info = 3;
+}
+//添加好友回复
+message AddRcFriendRsp
+{
+	required int32 version = 1;
+	required int32 ret = 2;
+	optional RC_ADD_RESULT add_rslt = 3; 
+}
+
+//请求添加好友通知
+message RcFriendReqNotifyRsp
+{
+	required int32 version = 1;
+	required uint64 req_id = 2;
+	required YOUMEServiceProtocol.RC_FRIEND_REQ_TYPE req_type = 3;
+	required bytes snder_id = 4;		//通知发起方
+	required bytes recver_id = 5;		//通知接收方
+	required bytes req_snder_id = 6;	//好友请求发起方
+	required bytes req_recver_id = 7;	//好友请求接收方
+	required YOUMEServiceProtocol.RC_FRIEND_REQ_STATE  cur_state = 8;
+	optional bytes notify_msg = 9;
+}
+
+//好友验证
+message VerifyRcFriendReq
+{
+	required int32 version = 1;
+	required bytes user_id = 2;
+	required uint64 add_req_id = 3;
+	required bytes verify_info = 4;
+	required int32 agree = 5;		//是否同意添加，0-同意，1表示拒绝
+}
+//好友验证回复
+message VerifyRcFriendRsp
+{
+	required int32 version = 1;
+	required int32 ret = 2;
+	required RC_ADD_RESULT add_rslt = 3; 
+}

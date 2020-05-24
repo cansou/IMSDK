@@ -1,0 +1,56 @@
+syntax = "proto2";
+option optimize_for = LITE_RUNTIME;
+package YOUMEServiceProtocol;
+import "youme_rcuserinfo.proto";
+
+
+//关系链用户简略信息
+message RcFriendBriefInfo
+{
+	required bytes user_id = 1;
+	optional bytes nickname = 2;			//昵称
+	optional RC_ONLINE_STATE online_state = 3;		//在线状态0-离线，1-在线
+}
+
+enum RC_FRIEND_REQ_STATE
+{
+	//添加好友请求状态
+	ADD_SUCCESS = 1;
+	ADD_WAIT_OTHER_VERIFY = 2;	//等待对方验证
+	ADD_WAIT_ME_VERIFY = 3;		//等待我验证
+	ADD_FAIL= 4;
+	
+	//删除好友请求状态
+	DEL_SUCCESS = 5;
+	DEL_FAIL = 6;
+	
+	//拉黑好友请求状态
+	BLACK_SUCCESS = 7;	
+	BLACK_FAIL = 8;
+	
+	//解除黑名单请求状态
+	UNBLACK_SUCCESS = 9;	
+	UNBLACK_FAIL = 10;
+}
+
+enum RC_FRIEND_REQ_TYPE
+{
+	TYPE_ADD = 1;		//主动添加别人
+	TYPE_BE_ADDED = 2;	//被别人添加
+	
+	TYPE_DEL = 3;		//主动删除别人
+	TYPE_BE_DELED = 4;	//被别人删除
+	
+	TYPE_BLACK = 5;			//拉黑别人
+	TYPE_BE_BLACKED = 6;	//被别人拉黑
+	
+	TYPE_UNBLACK = 7;		//主动解除黑名单
+	TYPE_BE_UNBLACKED = 8;	//被解除黑名单
+	
+}
+
+enum RC_STATE
+{
+	RC_STATE_FRIEND = 1;
+	RC_STATE_DEL = 2;	//被删除
+}

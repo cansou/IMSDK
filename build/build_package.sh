@@ -215,13 +215,6 @@ build_android(){
 
     if [ $recognize_type -eq 0 ]
     then
-    # cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/Msc.jar im_android/lib/
-    # cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/Sunflower.jar im_android/lib/
-    # cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/armeabi/libmsc.so im_android/lib/armeabi
-    # cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/armeabi-v7a/libmsc.so im_android/lib/armeabi-v7a
-    # cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/arm64-v8a/libmsc.so im_android/lib/arm64-v8a
-    # cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/x86/libmsc.so im_android/lib/x86
-    # cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/x86_64/libmsc.so im_android/lib/x86_64
     cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/armeabi/libuscasr.so im_android/lib/armeabi
     cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/armeabi-v7a/libuscasr.so im_android/lib/armeabi-v7a
     cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/arm64-v8a/libuscasr.so im_android/lib/arm64-v8a
@@ -400,124 +393,80 @@ build_macos(){
 }
 
 build_unity(){
+    PROJ_PATH="$WORKSPACE/IMDemo/U3DWrapper"
     #for unity
     #cp $WORKSPACE/lib/Android/Release/armeabi/libyim.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/armeabi/libyim.so
     mkdir -p $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/arm64-v8a/
-    cp $WORKSPACE/lib/Android/Release/arm64-v8a/libyim.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/arm64-v8a/libyim.so
+    cp $WORKSPACE/lib/Android/Release/arm64-v8a/libyim.so $PROJ_PATH/Assets/Plugins/Android/libs/arm64-v8a/libyim.so
     mkdir -p $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/armeabi-v7a/
-    cp $WORKSPACE/lib/Android/Release/armeabi-v7a/libyim.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/armeabi-v7a/libyim.so
+    cp $WORKSPACE/lib/Android/Release/armeabi-v7a/libyim.so $PROJ_PATH/Assets/Plugins/Android/libs/armeabi-v7a/libyim.so
     mkdir -p $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/x86/
-    cp $WORKSPACE/lib/Android/Release/x86/libyim.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/x86/libyim.so
+    cp $WORKSPACE/lib/Android/Release/x86/libyim.so $PROJ_PATH/Assets/Plugins/Android/libs/x86/libyim.so
     mkdir -p $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/x86_64/
-    cp $WORKSPACE/lib/Android/Release/x86_64/libyim.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/x86_64/libyim.so
-    cp $WORKSPACE/src/YouMeIMEngine/Android/java/build/libs/java.jar $WORKSPACE/U3DWrapper/Assets/Plugins/Android/yim.jar
-    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/android-support-v4.jar $WORKSPACE/U3DWrapper/Assets/Plugins/Android/
-    cp $WORKSPACE/Output/im_ios/lib/libYouMeCommon.a $WORKSPACE/U3DWrapper/Assets/Plugins/iOS/libYouMeCommon.a
-    cp $WORKSPACE/Output/im_ios/lib/libyim.a $WORKSPACE/U3DWrapper/Assets/Plugins/iOS/libyim.a
+    cp $WORKSPACE/lib/Android/Release/x86_64/libyim.so $PROJ_PATH/Assets/Plugins/Android/libs/x86_64/libyim.so
+    cp $WORKSPACE/src/YouMeIMEngine/Android/java/build/libs/java.jar $PROJ_PATH/Assets/Plugins/Android/yim.jar
+    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/android-support-v4.jar $PROJ_PATH/Assets/Plugins/Android/
+    cp $WORKSPACE/Output/im_ios/lib/libYouMeCommon.a $PROJ_PATH/Assets/Plugins/iOS/libYouMeCommon.a
+    cp $WORKSPACE/Output/im_ios/lib/libyim.a $PROJ_PATH/Assets/Plugins/iOS/libyim.a
 
     # macos lib
-    cp $WORKSPACE/lib/MAC/Release/libyim.dylib $WORKSPACE/U3DWrapper/Assets/Plugins/
+    cp $WORKSPACE/lib/MAC/Release/libyim.dylib $PROJ_PATH/Assets/Plugins/
     cd $WORKSPACE/U3DWrapper/Assets/Plugins/
     mv libyim.dylib yim.bundle
 
     if [ $recognize_type -eq 0 ]
     then
-    # cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/armeabi-v7a/libmsc.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/armeabi-v7a
-    # cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/arm64-v8a/libmsc.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/arm64-v8a
-    # cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/x86/libmsc.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/x86
-    # cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/x86_64/libmsc.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/x86_64
-    # cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/Msc.jar $WORKSPACE/U3DWrapper/Assets/Plugins/Android
-    # cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/Sunflower.jar $WORKSPACE/U3DWrapper/Assets/Plugins/Android
-    # cp -r $WORKSPACE/build/thirdLib/iflyMSC.framework $WORKSPACE/U3DWrapper/Assets/Plugins/iOS/
-    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/armeabi-v7a/libuscasr.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/armeabi-v7a
-    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/arm64-v8a/libuscasr.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/arm64-v8a
-    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/x86/libuscasr.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/x86
-    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/x86_64/libuscasr.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/x86_64
-    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/usc.jar $WORKSPACE/U3DWrapper/Assets/Plugins/Android
-    cp -r $WORKSPACE/build/thirdLib/USCModule.framework $WORKSPACE/U3DWrapper/Assets/Plugins/iOS/
-    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/armeabi-v7a/libnlscppsdk.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/armeabi-v7a
-    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/arm64-v8a/libnlscppsdk.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/arm64-v8a
-    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/x86/libnlscppsdk.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/x86
-    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/x86_64/libnlscppsdk.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/x86_64
-    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/armeabi-v7a/libuuid.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/armeabi-v7a
-    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/arm64-v8a/libuuid.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/arm64-v8a
-    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/x86/libuuid.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/x86
-    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/x86_64/libuuid.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/x86_64
-    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/alisr.jar $WORKSPACE/U3DWrapper/Assets/Plugins/Android
-    cp -r $WORKSPACE/build/thirdLib/AliyunNlsSdk.framework $WORKSPACE/U3DWrapper/Assets/Plugins/iOS/
+    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/armeabi-v7a/libuscasr.so $PROJ_PATH/Assets/Plugins/Android/libs/armeabi-v7a
+    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/arm64-v8a/libuscasr.so $PROJ_PATH/Assets/Plugins/Android/libs/arm64-v8a
+    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/x86/libuscasr.so $PROJ_PATH/Assets/Plugins/Android/libs/x86
+    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/x86_64/libuscasr.so $PROJ_PATH/Assets/Plugins/Android/libs/x86_64
+    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/usc.jar $PROJ_PATH/Assets/Plugins/Android
+    cp -r $WORKSPACE/build/thirdLib/USCModule.framework $PROJ_PATH/Assets/Plugins/iOS/
+    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/armeabi-v7a/libnlscppsdk.so $PROJ_PATH/Assets/Plugins/Android/libs/armeabi-v7a
+    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/arm64-v8a/libnlscppsdk.so $PROJ_PATH/Assets/Plugins/Android/libs/arm64-v8a
+    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/x86/libnlscppsdk.so $PROJ_PATH/Assets/Plugins/Android/libs/x86
+    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/x86_64/libnlscppsdk.so $PROJ_PATH/Assets/Plugins/Android/libs/x86_64
+    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/armeabi-v7a/libuuid.so $PROJ_PATH/Assets/Plugins/Android/libs/armeabi-v7a
+    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/arm64-v8a/libuuid.so $PROJ_PATH/Assets/Plugins/Android/libs/arm64-v8a
+    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/x86/libuuid.so $PROJ_PATH/Assets/Plugins/Android/libs/x86
+    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/x86_64/libuuid.so $PROJ_PATH/Assets/Plugins/Android/libs/x86_64
+    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/alisr.jar $PROJ_PATH/Assets/Plugins/Android
+    cp -r $WORKSPACE/build/thirdLib/AliyunNlsSdk.framework $PROJ_PATH/Assets/Plugins/iOS/
     elif [ $recognize_type -eq 2 ]
     then
-    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/armeabi-v7a/libmsc.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/armeabi-v7a
-    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/arm64-v8a/libmsc.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/arm64-v8a
-    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/x86/libmsc.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/x86
-    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/x86_64/libmsc.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/x86_64
-    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/Msc.jar $WORKSPACE/U3DWrapper/Assets/Plugins/Android
-    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/Sunflower.jar $WORKSPACE/U3DWrapper/Assets/Plugins/Android
-    cp -r $WORKSPACE/build/thirdLib/iflyMSC.framework $WORKSPACE/U3DWrapper/Assets/Plugins/iOS/
+    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/armeabi-v7a/libmsc.so $PROJ_PATH/Assets/Plugins/Android/libs/armeabi-v7a
+    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/arm64-v8a/libmsc.so $PROJ_PATH/Assets/Plugins/Android/libs/arm64-v8a
+    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/x86/libmsc.so $PROJ_PATH/Assets/Plugins/Android/libs/x86
+    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/x86_64/libmsc.so $PROJ_PATH/Assets/Plugins/Android/libs/x86_64
+    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/Msc.jar $PROJ_PATH/Assets/Plugins/Android
+    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/Sunflower.jar $PROJ_PATH/Assets/Plugins/Android
+    cp -r $WORKSPACE/build/thirdLib/iflyMSC.framework $PROJ_PATH/Assets/Plugins/iOS/
     elif [ $recognize_type -eq 3 ]
     then
-    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/armeabi-v7a/libuscasr.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/armeabi-v7a
-    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/arm64-v8a/libuscasr.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/arm64-v8a
-    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/x86/libuscasr.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/x86
-    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/x86_64/libuscasr.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/x86_64
-    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/usc.jar $WORKSPACE/U3DWrapper/Assets/Plugins/Android
-    cp -r $WORKSPACE/build/thirdLib/USCModule.framework $WORKSPACE/U3DWrapper/Assets/Plugins/iOS/
+    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/armeabi-v7a/libuscasr.so $PROJ_PATH/Assets/Plugins/Android/libs/armeabi-v7a
+    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/arm64-v8a/libuscasr.so $PROJ_PATH/Assets/Plugins/Android/libs/arm64-v8a
+    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/x86/libuscasr.so $PROJ_PATH/Assets/Plugins/Android/libs/x86
+    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/x86_64/libuscasr.so $PROJ_PATH/Assets/Plugins/Android/libs/x86_64
+    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/usc.jar $PROJ_PATH/Assets/Plugins/Android
+    cp -r $WORKSPACE/build/thirdLib/USCModule.framework $PROJ_PATH/Assets/Plugins/iOS/
     elif [ $recognize_type -eq 4 ]
     then
-    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/armeabi-v7a/libnlscppsdk.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/armeabi-v7a
-    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/arm64-v8a/libnlscppsdk.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/arm64-v8a
-    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/x86/libnlscppsdk.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/x86
-    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/x86_64/libnlscppsdk.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/x86_64
-    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/armeabi-v7a/libuuid.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/armeabi-v7a
-    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/arm64-v8a/libuuid.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/arm64-v8a
-    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/x86/libuuid.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/x86
-    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/x86_64/libuuid.so $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/x86_64
-    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/alisr.jar $WORKSPACE/U3DWrapper/Assets/Plugins/Android
-    cp -r $WORKSPACE/build/thirdLib/AliyunNlsSdk.framework $WORKSPACE/U3DWrapper/Assets/Plugins/iOS/
-    fi
-
-    #cp $WORKSPACE/ReleaseNote.txt $WORKSPACE/U3DWrapper/Assets/YouMeIMSDKReleaseNote.txt
-    #rm -rf $WORKSPACE/U3DWrapper/Assets/Plugins/x86
-    #mkdir $WORKSPACE/U3DWrapper/Assets/Plugins/x86
-    #rm -rf $WORKSPACE/U3DWrapper/Assets/Plugins/x86_64
-    #mkdir $WORKSPACE/U3DWrapper/Assets/Plugins/x86_64
-    if [ $cibuild -eq 1 ]
-    then
-    cp $WORKSPACE/Output/yim.dll $WORKSPACE/U3DWrapper/Assets/Plugins/x86/yim.dll
-    # cp $WORKSPACE/lib/ifly/msc.dll $WORKSPACE/U3DWrapper/Assets/Plugins/x86
-    cp $WORKSPACE/lib/usc/x86/libusc.dll $WORKSPACE/U3DWrapper/Assets/Plugins/x86
-    cp $WORKSPACE/lib/ali/x86/nlscppsdk.dll $WORKSPACE/U3DWrapper/Assets/Plugins/x86
-    cp $WORKSPACE/lib/ali/x86/nlscppsdk_debug.dll $WORKSPACE/U3DWrapper/Assets/Plugins/x86
-    cp $WORKSPACE/lib/ali/x86/pthreadVC2.dll $WORKSPACE/U3DWrapper/Assets/Plugins/x86
-    cp $WORKSPACE/lib/ali/x86/jsoncpp-0.y.z.dll $WORKSPACE/U3DWrapper/Assets/Plugins/x86
-    cp $WORKSPACE/lib/ali/x86/libeay32.dll $WORKSPACE/U3DWrapper/Assets/Plugins/x86
-    cp $WORKSPACE/lib/ali/x86/ssleay32.dll $WORKSPACE/U3DWrapper/Assets/Plugins/x86
-
-    cp $WORKSPACE/lib/sys/x86/msvcp120.dll  $WORKSPACE/U3DWrapper/Assets/Plugins/x86
-    cp $WORKSPACE/lib/sys/x86/msvcr100.dll  $WORKSPACE/U3DWrapper/Assets/Plugins/x86
-    cp $WORKSPACE/lib/sys/x86/msvcr120.dll  $WORKSPACE/U3DWrapper/Assets/Plugins/x86
-
-
-
-    cp $WORKSPACE/Output/yim_x64.dll $WORKSPACE/U3DWrapper/Assets/Plugins/x86_64/yim.dll
-    # cp $WORKSPACE/lib/ifly/msc_x64.dll $WORKSPACE/U3DWrapper/Assets/Plugins/x86_64
-    cp $WORKSPACE/lib/usc/x64/libusc.dll $WORKSPACE/U3DWrapper/Assets/Plugins/x86_64
-    cp $WORKSPACE/lib/ali/x64/nlscppsdk.dll $WORKSPACE/U3DWrapper/Assets/Plugins/x86_64
-    cp $WORKSPACE/lib/ali/x64/nlscppsdk_debug.dll $WORKSPACE/U3DWrapper/Assets/Plugins/x86_64
-    cp $WORKSPACE/lib/ali/x64/pthreadVC2.dll $WORKSPACE/U3DWrapper/Assets/Plugins/x86_64
-    cp $WORKSPACE/lib/ali/x64/jsoncpp-0.y.z.dll $WORKSPACE/U3DWrapper/Assets/Plugins/x86_64
-    cp $WORKSPACE/lib/ali/x64/libeay32.dll $WORKSPACE/U3DWrapper/Assets/Plugins/x86_64
-    cp $WORKSPACE/lib/ali/x64/ssleay32.dll $WORKSPACE/U3DWrapper/Assets/Plugins/x86_64
-    cp $WORKSPACE/lib/sys/x64/msvcp120.dll  $WORKSPACE/U3DWrapper/Assets/Plugins/x86_64
-    cp $WORKSPACE/lib/sys/x64/msvcr100.dll  $WORKSPACE/U3DWrapper/Assets/Plugins/x86_64
-    cp $WORKSPACE/lib/sys/x64/msvcr120.dll  $WORKSPACE/U3DWrapper/Assets/Plugins/x86_64
+    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/armeabi-v7a/libnlscppsdk.so $PROJ_PATH/Assets/Plugins/Android/libs/armeabi-v7a
+    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/arm64-v8a/libnlscppsdk.so $PROJ_PATH/Assets/Plugins/Android/libs/arm64-v8a
+    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/x86/libnlscppsdk.so $PROJ_PATH/Assets/Plugins/Android/libs/x86
+    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/x86_64/libnlscppsdk.so $PROJ_PATH/Assets/Plugins/Android/libs/x86_64
+    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/armeabi-v7a/libuuid.so $PROJ_PATH/Assets/Plugins/Android/libs/armeabi-v7a
+    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/arm64-v8a/libuuid.so $PROJ_PATH/Assets/Plugins/Android/libs/arm64-v8a
+    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/x86/libuuid.so $PROJ_PATH/Assets/Plugins/Android/libs/x86
+    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/x86_64/libuuid.so $PROJ_PATH/Assets/Plugins/Android/libs/x86_64
+    cp $WORKSPACE/src/YouMeIMEngine/Android/java/libs/alisr.jar $PROJ_PATH/Assets/Plugins/Android
+    cp -r $WORKSPACE/build/thirdLib/AliyunNlsSdk.framework $PROJ_PATH/Assets/Plugins/iOS/
     fi
 
     # Unity 还不支持x86_64， 导出插件时先移除掉 x86_64的库
-    rm -rf $WORKSPACE/U3DWrapper/Assets/Plugins/Android/libs/x86_64
+    rm -rf $PROJ_PATH/Assets/Plugins/Android/libs/x86_64
 
     UNITY="/Applications/Unity/Unity.app/Contents/MacOS/Unity"
-    PROJ_PATH="$WORKSPACE/U3DWrapper"
     EXPORT_FILE="$WORKSPACE/Output/im_unity_${mainVersion}${buildNo}.unitypackage"
     ${UNITY} -batchmode -quit -projectPath "${PROJ_PATH}" -executeMethod AutoSdkExport.AutoExport \
     "Assets/Plugins" "Assets/YIMEngine" "Assets/YouMe" \
@@ -530,9 +479,7 @@ build_unity(){
     fi
 
     cd "$WORKSPACE/Output/"
-    zip -r im_unity_${mainVersion}${buildNo}${packagenameattach}.zip im_unity_${mainVersion}${buildNo}.unitypackage ReleaseNote.txt \
-    "IM SDK for Unity3D 使用指南-${buildNo}.html" \
-    "IM接入常见问题处理.txt" "游密IM_Unity接入快速测试指南.xlsx"
+    zip -r im_unity_${mainVersion}${buildNo}${packagenameattach}.zip im_unity_${mainVersion}${buildNo}.unitypackage
 }
 
 if [ $android = "yes" ];then

@@ -1,0 +1,34 @@
+syntax = "proto2";
+option optimize_for = LITE_RUNTIME;
+package YOUMEServiceProtocol;
+import "youme_comm.proto";
+
+// 通知或命令下发包体, 包体由会话 key 加密
+message NotifyRsp
+{
+	required int32 version = 1;
+	required string msg = 2;
+	repeated YOUMECommonProtocol.NameValue args = 3;
+}
+
+// 通知请求包体
+message NotifyReq
+{
+	required int32 version = 1;
+	required int32 notify_type = 2;
+	required bytes snder_id = 3;
+	required bytes recver_id = 4;//roomID
+	required int32 notify_property = 5;
+	optional bytes notify_msg = 6;//Content
+	repeated YOUMECommonProtocol.NameValue notify_args = 7;
+}
+
+// 通知消息已读
+message NotifyReadRsp
+{
+	required int32 version = 1;
+	required int32 chat_type = 2;
+	required bytes snder_id = 3;
+	required bytes recver_id = 4;
+	required uint64 msg_id = 5;
+}

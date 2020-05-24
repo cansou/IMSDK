@@ -1,0 +1,19 @@
+syntax = "proto2";
+option optimize_for = LITE_RUNTIME;
+package YOUMEServiceProtocol;
+
+import "youme_rcuserinfo.proto";
+
+//更新关系链用户状态信息
+message UpdateRcUserOnlineStateReq
+{
+required int32 version = 1;
+required RC_ONLINE_STATE online_state = 2;
+}
+
+//更新关系链用户状态信息回复
+message UpdateRcUserOnlineStateRsp
+{
+required int32 version = 1;
+required int32 ret = 2;
+}

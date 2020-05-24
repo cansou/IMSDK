@@ -1,0 +1,29 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.youme.imengine.androidsdk"
+4    android:installLocation="auto"
+5    android:theme="@android:style/Theme.NoTitleBar"
+6    android:versionCode="1"
+7    android:versionName="1.1" >
+8
+9    <uses-sdk
+9-->/Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml:4:3-71
+10        android:minSdkVersion="8"
+10-->/Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml:4:13-38
+11        android:targetSdkVersion="25" />
+11-->/Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml:4:39-68
+12
+13    <supports-screens
+13-->/Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml:3:3-163
+14        android:anyDensity="true"
+14-->/Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml:3:135-160
+15        android:largeScreens="true"
+15-->/Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml:3:78-105
+16        android:normalScreens="true"
+16-->/Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml:3:49-77
+17        android:smallScreens="true"
+17-->/Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml:3:21-48
+18        android:xlargeScreens="true" />
+18-->/Users/shuhuan/Desktop/github/IMSDK/src/YouMeIMEngine/Android/javasdk/AndroidManifest.xml:3:106-134
+19
+20</manifest>

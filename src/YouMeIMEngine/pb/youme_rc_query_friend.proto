@@ -1,0 +1,39 @@
+syntax = "proto2";
+option optimize_for = LITE_RUNTIME;
+package YOUMEServiceProtocol;
+import "youme_rc_comm.proto";
+
+
+//关系链按ID查找好友
+message QueryRcFriendByUserNameReq
+{
+	required int32 version = 1;
+	required bytes user_id = 2;
+	required int32 start_idx = 3;		//分页起始小标 同mysql中limit
+	required int32 len = 4;				//分页长度
+}
+
+message QueryRcFriendByUserNameRsp
+{
+	required int32 version = 1;
+	required int32 ret = 2;
+	required int32 list_cnt = 3;
+	repeated YOUMEServiceProtocol.RcFriendBriefInfo user_list = 4;
+}
+
+//关系链按昵称查找好友
+message QueryRcFriendByUserNicknameReq
+{
+	required int32 version = 1;
+	required bytes nickname = 2;
+	required int32 start_idx = 3;		//分页起始小标 同mysql中limit
+	required int32 len = 4;				//分页长度
+}
+
+message QueryRcFriendByUserNicknameRsp
+{
+	required int32 version = 1;
+	required int32 ret = 2;
+	required int32 list_cnt = 3;
+	repeated YOUMEServiceProtocol.RcFriendBriefInfo user_list = 4;
+}

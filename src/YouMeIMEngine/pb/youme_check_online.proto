@@ -1,0 +1,18 @@
+syntax = "proto2";
+option optimize_for = LITE_RUNTIME;
+package YOUMEServiceProtocol;
+
+// 检查是否在线请求包
+message CheckOnlineReq
+{
+	required int32 version = 1;		
+	required bytes user_id = 2;
+}
+
+// 检查是否在线应答包
+message CheckOnlineRsp
+{
+	required int32 version = 1;
+	required int32 ret = 2;				// 返回码, 0成功, 其他失败
+	required int32 is_online = 3;		// 0:不在线, 1:在线
+}

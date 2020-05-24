@@ -1,0 +1,28 @@
+syntax = "proto2";
+option optimize_for = LITE_RUNTIME;
+package YOUMEServiceProtocol;
+import "youme_comm.proto";
+
+// 获取行政区域请求
+message GetDistrictReq
+{
+	required int32 version = 1;
+	required double longitude = 2;	// 请求方所在经度
+	required double latitude = 3;	// 请求方所在纬度
+	optional uint32 adcode = 4;		// 请求方参考所在行政区域编码
+	optional string keywords = 5;	// 请求方大致所在行政区域描述
+}
+
+// 获取行政区域响应
+message GetDistrictRsp
+{
+	required int32 version = 1;
+	required int32 ret = 2;							// 返回码, 0成功, 其他失败
+	required string district_name = 3;				// 行政区域描述
+	required YOUMECommonProtocol.DistrictLevel district_level = 4;		// 行政区域等级
+	required string city_code = 5;					// 城市编码
+	required uint32 adcode = 6;						// 行政区域编码
+	required uint32 higher_adcode = 7;				// 上一级行政区域编码
+	required uint32 city_adcode = 8;				// 所在市行政区域编码
+	required uint32 province_adcode = 9;			// 所在省行政区域编码
+}

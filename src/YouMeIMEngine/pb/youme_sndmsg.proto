@@ -1,0 +1,74 @@
+syntax = "proto2";
+option optimize_for = LITE_RUNTIME;
+package YOUMEServiceProtocol;
+import "youme_comm.proto";
+
+// 群发的接收者ID列表
+message RecverList
+{
+	repeated bytes recver_id = 1;
+}
+
+// 消息请求包
+message SendMsgReq
+{
+	required int32 version = 1;	
+	required int32 chat_type = 2;
+	required bytes recv_id = 3;
+	required bytes msg_content = 4;
+	optional YOUMECommonProtocol.MsgComment comment = 5;
+	optional uint32 tran_type = 6;	// 0:普通, 1:仅抄送
+}
+
+// 消息应答包
+message SendMsgRsp
+{
+	required int32 version = 1;
+	required int32 ret = 2;				// 返回码, 0成功, 其他失败
+	required uint64 svr_msgid = 3;		// 发送成功后, 服务器返回的消息ID
+	optional bytes ret_info = 4;
+	optional uint64 expire_time = 5;	// 封禁过期时间
+	optional bool forbid_room = 6;		// 房间是否被封禁
+	optional int32 reason_type = 7;		// 封禁类型
+	optional string reason = 8;			// 封禁原因
+}
+
+// 消息事件
+message RoomMsgNotice
+{
+	required int32 version = 1;	
+	required bytes sender_id = 2;
+	required bytes room_name = 3;
+	required int32 notice_property = 4;
+	optional bytes msg_content = 5;
+	optional bool check_mask = 6;
+}
+
+// 同步消息对端是否已读
+message SynMsgStatusReq
+{
+	required int32 version = 1;	
+	repeated RecvType recv_list = 2;
+}
+
+message RecvType
+{
+	required bytes recv_id = 1;   //已发送消息的接收端userId
+	required int32 chat_type = 2; 
+	optional uint64 msg_id = 3;
+}
+
+message SynMsgStatusRsp
+{
+	required int32 version = 1;	
+	required int32 ret = 2;	
+	repeated RecvTypeRsp recv_rsp_list = 3;
+}
+
+message RecvTypeRsp
+{
+	required bytes recv_id = 1;  // 已查看该消息的接收端userId
+	required int32 chat_type = 2;
+	required uint64 msg_id = 3;
+	optional int32 un_read_num = 4;
+}

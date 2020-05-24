@@ -1,0 +1,47 @@
+syntax = "proto2";
+option optimize_for = LITE_RUNTIME;
+package YOUMEServiceProtocol;
+import "youme_comm.proto";
+
+// 房间列表
+message RoomList
+{
+	repeated bytes room_name = 1;
+}
+
+// 获取消息请求包
+message GetMsgReq
+{
+	required int32 version = 1;	
+	required uint64 msgid = 2;
+	optional bytes room_mask = 3;
+}
+
+message GetRoomHistoryMsgReq
+{
+	required int32 version = 1;	
+	required bytes room_name = 2;
+}
+
+message YoumeMsg
+{
+	required uint64 msgid = 1;
+	required bytes sender_id = 2;
+	required bytes recver_id = 3;
+	required int32 msg_type = 4;
+	required int32 chat_type = 5;
+	required bytes msg_content = 6;
+	required uint64 sender_serial = 7;
+	required uint64 svr_msgid = 8;
+	required uint32 create_time = 9;
+	optional YOUMECommonProtocol.MsgComment comment = 10;
+}
+
+// 获取消息应答包
+message GetMsgRsp
+{
+	required int32 version = 1;
+	required int32 ret = 2;				// 返回码, 0成功, 其他失败
+	required int32 msg_cnt = 3;
+	repeated YoumeMsg msg_list = 4; 
+}
